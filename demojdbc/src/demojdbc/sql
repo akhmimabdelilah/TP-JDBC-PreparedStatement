@@ -1,0 +1,9 @@
+CREATE DATABASE db;
+USE db;
+--
+-- Structure de la table ‘site‘
+--
+CREATE TABLE ‘site‘ (
+‘id‘ int(11) primary key auto_increment,
+‘nom‘ varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
