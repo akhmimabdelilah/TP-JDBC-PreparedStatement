@@ -14,11 +14,11 @@
 
 ![Login](./img/accueil.png)
 
-**page de gestion des Clients :**
+**Page de Gestion des Clients :**
 
 ![Login](./img/clients.png)
 
-**Page Gestion des Services :**
+**Page de Gestion des Services :**
 
 ![Login](./img/services.png)
 
