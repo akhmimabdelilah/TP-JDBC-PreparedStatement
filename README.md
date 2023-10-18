@@ -8,8 +8,8 @@ Solutions des Exercices TP1-5:
 - `entreprise` ou `Gestion des employes`: [TP4](./entreprise/README.md)
 - `GestionEmploye` ou `Java/Swing/JDBC/MySQL`: [TP5](./GestionEmploye/README.md)
 
-Solutions des Exercices TP1-5:
-- `GCS-Project` ou `Java/Swing/JDBC/MySQL`: [Project](./GCS-Project/README.md)
+Solutions du Projet:
+- `GCS-Project` ou `Gestion Client Service`: [Project](./GCS-Project/README.md)
 
 
 "# TP-JDBC-PreparedStatement"
