@@ -1,13 +1,19 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ma.projet.connexion;
 
-import com.mysql.jdbc.Connection;
 import java.io.FileInputStream;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
-/*
- * @author akhmim
- */
 
+/**
+ *
+ * @author brigh
+ */
 public class Connexion {
 
     private static Connection connection;
@@ -22,7 +28,7 @@ public class Connexion {
             String password = p.getProperty("jdbc.password");
             String driver = p.getProperty("jdbc.driver");
             Class.forName(driver);
-            connection = (Connection) DriverManager.getConnection(url, login, password);
+            connection = DriverManager.getConnection(url, login, password);
         } catch (Exception ex) {
             System.out.println("" + ex.getMessage());
         }

@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS ‘employe‘ (
 ‘prenom‘ varchar(50) NOT NULL,
 PRIMARY KEY (‘id‘)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+ 
 CREATE TABLE IF NOT EXISTS ‘message‘ (
 ‘objet‘ varchar(50) NOT NULL,
 ‘sujet‘ varchar(500) NOT NULL,

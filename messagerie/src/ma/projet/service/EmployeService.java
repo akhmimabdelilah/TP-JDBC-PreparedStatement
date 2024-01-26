@@ -5,7 +5,6 @@
  */
 package ma.projet.service;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import ma.projet.beans.Employe;
+import ma.project.beans.Employe;
 import ma.projet.connexion.Connexion;
 import ma.projet.dao.IDao;
 
@@ -23,19 +22,19 @@ import ma.projet.dao.IDao;
 public class EmployeService implements IDao<Employe> {
 
     @Override
-
     public boolean create(Employe o) {
         try {
-            String req = "INSERT INTO employe (nom, prenom) VALUES (?, ?)";
-            Connection connection = Connexion.getConnection(); // Obtenez la connexion ici
-            PreparedStatement ps = connection.prepareStatement(req);
+            String req = "insert into employe (nom, prenom) values(?,?)";
+            PreparedStatement ps
+                    = Connexion.getConnection().prepareStatement(req);
             ps.setString(1, o.getNom());
             ps.setString(2, o.getPrenom());
-
-            int rowsAffected = ps.executeUpdate();
-            return rowsAffected == 1;
+            if (ps.executeUpdate() == 1) {
+                return true;
+            }
         } catch (SQLException ex) {
-            Logger.getLogger(EmployeService.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EmployeService.class.getName()).log(Level.SEVERE,
+                    null, ex);
         }
         return false;
     }
@@ -43,9 +42,8 @@ public class EmployeService implements IDao<Employe> {
     @Override
     public boolean update(Employe o) {
         try {
-            String req = "update employe set nom = ? , prenom = ? where id =?";
-
-            PreparedStatement ps
+            String req = "update employe set nom = ? , prenom = ? where id = ?";
+PreparedStatement ps
                     = Connexion.getConnection().prepareStatement(req);
             ps.setString(1, o.getNom());
             ps.setString(2, o.getPrenom());
@@ -87,7 +85,8 @@ public class EmployeService implements IDao<Employe> {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                employe = new Employe(rs.getString("nom"), rs.getString("prenom"));
+                employe = new Employe(rs.getInt("id"), rs.getString("nom"),
+                        rs.getString("prenom"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(EmployeService.class.getName()).log(Level.SEVERE,
@@ -105,7 +104,7 @@ public class EmployeService implements IDao<Employe> {
                     = Connexion.getConnection().prepareStatement(req);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                employes.add(new Employe(rs.getString("nom"), rs.getString("prenom")));
+                employes.add(new Employe(rs.getInt("id"),rs.getString("nom"), rs.getString("prenom")));
             }
         } catch (SQLException ex) {
             Logger.getLogger(EmployeService.class.getName()).log(Level.SEVERE,
@@ -113,5 +112,4 @@ public class EmployeService implements IDao<Employe> {
         }
         return employes;
     }
-
 }

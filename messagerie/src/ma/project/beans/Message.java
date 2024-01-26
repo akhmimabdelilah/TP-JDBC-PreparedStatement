@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ma.projet.beans;
+package ma.project.beans;
 
 import java.sql.Date;
 
@@ -110,5 +110,4 @@ public class Message {
     public String toString() {
         return "Message{" + "id=" + id + ", objet=" + objet + ", sujet=" + sujet + ", date=" + date + ", idE=" + idE + ", idR=" + idR + ", EmpEmetteur=" + EmpEmetteur + ", EmpRecepteur=" + EmpRecepteur + '}';
     }
-
 }

@@ -3,15 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ma.projet.test;
+package messagerie;
 
-/*
- * @author akhmim
+/**
+ *
+ * @author brigh
  */
-public class Test {
+public class Messagerie {
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        System.out.println("Hello Messagerie");
-
+        // TODO code application logic here
     }
+    
 }

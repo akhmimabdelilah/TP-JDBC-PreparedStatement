@@ -7,8 +7,9 @@ package ma.projet.dao;
 
 import java.util.List;
 
-/*
- * @author akhmim
+/**
+ *
+ * @author brigh
  */
 public interface IDao<T> {
 
@@ -21,5 +22,4 @@ public interface IDao<T> {
     T getById(int id);
 
     List<T> getAll();
-
 }
